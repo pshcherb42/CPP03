@@ -1,14 +1,20 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() {
+ScavTrap::ScavTrap() : ClapTrap() {
+    _hpoints = 100;
+    _epoints = 50;
+    _damage = 20;
     std::cout << "ScavTrap default constructor called" << std::endl;
 };
 
 ScavTrap::ScavTrap(std::string const& name) : ClapTrap(name) {
+    _hpoints = 100;
+    _epoints = 50;
+    _damage = 20;
     std::cout << "ScavTrap " << name << " constructor called" << std::endl;
 };
 
-ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy) {
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
     std::cout << "ScavTrap copy constructor called" << std::endl;
 };
 
@@ -19,7 +25,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other) {
         _epoints = other._epoints;
         _damage = other._damage;
     }
-    std::cout << "ClapTrap Assignment Operator Called!" << std::endl;
+    std::cout << "ScavTrap Assignment Operator Called!" << std::endl;
     return (*this);
 };
 
@@ -35,7 +41,7 @@ void ScavTrap::attack(const std::string& target) {
 };
 
 void ScavTrap::guardGate() {
-    std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+    std::cout << "ScavTrap " << _name << " is now in Gate keeper mode" << std::endl;
 };
 
 ScavTrap::~ScavTrap() {

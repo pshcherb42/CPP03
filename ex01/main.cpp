@@ -9,8 +9,10 @@ int main() {
     Nolan.takeDamage(Guiliermo.getAttackDamage());
 
     Nolan.beRepaired(3);
-    Guiliermo.attack(Nolan.getName());
-    Nolan.takeDamage(Guiliermo.getAttackDamage());
+    Nolan.attack(Guiliermo.getName());
+    Guiliermo.takeDamage(Nolan.getAttackDamage());
+    Guiliermo.beRepaired(4);
+    Nolan.guardGate();
 
     return (0);
 }
